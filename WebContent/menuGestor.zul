@@ -1,0 +1,27 @@
+
+<zk>
+
+    <style src="/widgets/layout/style.css"/>
+     <div sclass="banerDireito">
+       
+    <vbox width="50px" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.Menu_gestor_controller">
+       
+            
+       <space height="30px"></space>
+              <menubar width="100px" scrollable="true" orient="vertical">
+                    <menuitem label="Início" id="mnut_corpo"/>
+                    <menuitem label="Publica Artigo" id="mnut_publicArt"/>                    
+	                <menuitem label="Gerir Promoções" id="mnut_promocao"/>  
+	                <menuitem label="Gerir Categoria" id="mnut_categoria"/>                    
+	                <menuitem label="Gerir Quarto" id="mnut_quarto"/>                                    
+	                <menuitem label="Gerir Serviços"  id="mnut_servicos"/>	                    
+                    <menuitem label="Estatísticas" id="mnut_estatistica"/>
+                    <menuitem label="Lista de Comentario" id="mnut_comentario"/>
+                </menubar>
+            
+     
+    </vbox>
+	     
+	  </div>  
+
+</zk>

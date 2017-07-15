@@ -1,0 +1,87 @@
+<zk>
+      <style src="/widgets/layout/style.css" />
+      
+      <!-- 
+            <zscript>
+        import org.zkoss.zk.ui.Executions;
+        import java.lang.String;
+        import org.zkoss.zk.ui.util.Clients;
+        import mz.PestanaRovuma.Hotel_and_Resorts.Dao.SubpaginasDao;
+        import java.util.List;
+        import mz.PestanaRovuma.Hotel_and_Resorts.model.Subpaginas;
+        
+          boolean ini = true;
+          boolean incheck= false;
+          boolean outckeck = false;
+          boolean reslist= false;
+          boolean servlist = false;
+          boolean qrtlist= false;
+          boolean hospact = false;
+          boolean cobra= false;          
+          
+          boolean i = false;
+            List li = new SubpaginasDao().findAll();
+         
+			    Subpaginas sub = new Subpaginas();
+			    sub = li.get(0);
+      
+        if (sub.getAreaGestor().equalsIgnoreCase("i")) { 
+                ini = false;
+                incheck= true;
+                outckeck = false;
+                reslist= false;
+                servlist = false;
+                qrtlist= false;
+                hospact = false;
+                cobra= false;
+              Clients.showNotification("Checkin efectuado com sucesso!");
+        }
+          
+         sub.setAreaGestor("zz");
+         sub.setAreaHospede("zz");
+         sub.setAreaRecepcionista("zz");
+         new SubpaginasDao().update(sub);
+         
+       </zscript>
+     -->
+     
+        <borderlayout sclass="complex-layout" height="1000px">
+        
+            <north  border="0">
+            <div>
+              <include src="/header.zul"  />
+            </div>
+            </north>
+                 
+                 
+                 <east width="200px" >
+                   <div>
+		              <include src="/barnerLogout.zul" />
+		              </div>
+                     </east>
+                     
+                  <west width ="150px" border="0" flex="true">
+		                 <include src="/menuRecepcionista.zul"/>
+                       </west>    
+                     
+              <center >
+                                              
+                              <div align="center">                       
+                                <include id="inc_corpoPrincipal" visible="true" src="/corpoRecepcionista.zul"/>
+                                <include id="inc_checkin" visible="false" src="/checkIn.zul" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.checkInController"/> 
+                                <include id="inc_checkout" visible="false" src="/checkout.zul" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.CheckoutController"/> 
+                                <include id="inc_listReserva" visible="false" src="/listarReservas.zul" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.ListarReservasController"/>  
+                                <include id="inc_actHospedagem" visible="false" src="/actualizarHospedagem.zul" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.ActualizarHospedagemController" /> 
+                                <include id="inc_listHospedagem" visible="false" src="/listarHospedagens.zul" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.ListarHospedagemController" />
+                                <include id="inc_cobranca" visible="false" src="/cobranca.zul" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.CobrancaController"/>    
+                              </div>   
+                             
+             </center>
+             <south>
+                <div>
+                    <include src="/footer.zul"/>
+                </div>
+             </south>
+           </borderlayout>
+
+</zk>

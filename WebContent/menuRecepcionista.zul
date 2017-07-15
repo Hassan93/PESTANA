@@ -1,0 +1,20 @@
+ <zk>
+<style src="/widgets/layout/style.css"/>
+     <div sclass="banerDireito">
+   <space width="10px"/>
+      <vbox width="50px" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.MenuRecepcionistaController">
+       <space height="30px"/>
+                    <menubar width="100px" scrollable="true" orient="vertical">
+		                    <menuitem label="Início" id="mnt_inicio"/>
+		                    <menuitem label="Check In" id="mnt_checkin"/>
+		                    <menuitem label="Check Out" id="mnt_checkout"/>
+		                    <menuitem label="Listar Reserva" id="mnt_lista_reservas" />
+		                    <menuitem label="Listar Hospedagens" id="mnt_lista_hospedagens"/>
+		                    <menuitem label="Actualizar Hospedagens" id="mnt_act_hospedagens"/>
+		                    <menuitem label="Cobranças" id="mnt_cobracas"/>
+                    </menubar>
+     </vbox>
+ 
+  </div>
+
+</zk>

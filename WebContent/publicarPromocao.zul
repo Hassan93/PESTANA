@@ -1,0 +1,53 @@
+<zk>
+    
+    <div id="bl_servico" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.PublicarPromocaoController"  >
+    <div>
+         <div align="center">
+        <label value="Publicar Promoções" style=" font-size:25pt;font-weight:bold" /> <space/><space/>
+        </div>
+        
+         <separator bar="true" />
+    </div>
+    <separator/>
+    
+    <div align="right">
+          
+           <button  id="btn_add" label="Adicionar Servico" image="/widgets/Imagens/add.png"  />
+       
+    </div>
+   <separator/>
+   <separator/>
+    <div>
+    <listbox id="lista_servicos" rows="7">
+        
+        <listhead >
+            <listheader align="center"  label="codigo" width="5%" />
+            <listheader align="center"  label="Descricao" width="13%"/>
+            <listheader align="center"  label="Categoria" width="10%" />
+            <listheader align="center"  label="Desconto" width="8%"/>
+            <listheader align="center"  label="Publicar" width="10%"/>
+            <listheader align="center"  label="Cancelar" width="10%"/>
+            <listheader align="center"  label="Situacao" width="10%" />
+        </listhead>
+            <listitem value="${each}" forEach="${bl_servico$PublicarPromocaoController.promocoes}">
+            <listcell label="${each.id_Promocao}" />  
+            <listcell label="${each.descricao}" />    
+            <listcell label="${each.categoria.designacao}" /> 
+             <listcell label="${each.reducaoPercentual}" />
+            <listcell >
+                 <button   forward="onClick$celula_a" label="Publicar" />
+            </listcell>
+             <listcell >
+                 <button   forward="onClick$celula_r" label="Cancelar" />
+            </listcell>
+            <listcell label="${each.situacao}"> </listcell>
+           
+        </listitem>
+    </listbox>
+         </div>
+           <div align="right"> 
+           <separator/>      
+          </div>   
+          </div>  
+    
+</zk> 

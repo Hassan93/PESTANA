@@ -1,0 +1,8 @@
+<zk>
+   
+     <vlayout spacing="10">
+           <label value="Recepcao" style="font-size:36px;" /> 
+          <image sclass="complex-layout-header-img"   src="gestor.JPG"/>		   
+     </vlayout>   
+    
+</zk>

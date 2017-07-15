@@ -1,0 +1,173 @@
+<?page title="Actualizar Hospedagem" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<zscript>
+
+    import mz.PestanaRovuma.Hotel_and_Resorts.model.Alocacao;
+    
+    java.lang.String cod="";
+    
+    try {
+     cod = (String)Executions.getCurrent().getArg().get("1");
+   
+     }catch(NullPointerException e) {
+       cod="";    
+     }
+</zscript>
+
+<window id="wd_confirma" mode="highlighted" visible="false"  width="25%" height="100px" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.ActualizarHospedagemController" closable="true">
+  <borderlayout>
+   <north>
+     <div>
+        <label style="font-size:20px;font-weight:bold;" value="Confirmar actualização" />
+     </div>
+   </north>
+   <center border="0">
+     <div align="center">
+      <separator/>
+      <separator />
+        <label style="font-size:14px" value="Deseja actualizar a hospedagem?"/>
+     </div>
+   </center>
+   <south border="0">
+     <div align="center" >
+        <button id="btn_nao" label="Não" /> <space/><space/>
+        <button id="btn_sim" label="Sim" />
+     </div>
+   </south>
+  </borderlayout>
+</window>
+
+<borderlayout id="bl_actualizar" visible="true" width="80%" height="600px" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.ActualizarHospedagemController">
+    <north border="0">
+     <div align="center">
+     <label style="font-size:25px;font-weight:bold;" value="ACTUALIZAR HOSPEDAGEM"/> 
+     
+      <separator/>
+     <separator/>
+       </div>
+    </north>
+   <center border="0">
+    <div>
+    <groupbox>
+    <div style="text-align:center">
+     <separator/>
+     <separator/>
+     
+     <label style="font-weight:bold;" value="Código da alocação:"></label> 
+     <space/>
+     <textbox id="txt_codAlocacao" width="20%" value="${cod}" />
+     <space/> <button id="btn_ok" label="OK"></button>
+     <separator/> 
+     <separator/>   
+   </div>
+   </groupbox>
+    <separator/>
+     <separator/>
+   
+   <div>
+    <div> <space/><space/>
+     <label style="text-size:40px;font-weight:bold; " value="INFORMAÇÃO DO HÓSPEDEDE" />
+     <separator/>    
+     </div>
+ 
+       <grid>
+          <rows>
+			<row>
+				<cell colspan="2">
+					<listbox id="list_alocacao">
+						<listhead>
+						    <listheader label="Cod_alocacao" width="10%" />
+							<listheader label="Nome do hóspede" width="15%"/>
+							<listheader label="Categoria do quarto" width="13%"/>
+							<listheader label="Ref. do quarto" width="10%"/>
+							<listheader label="Data de entrada" width="10%"/>
+							<listheader label="Data de saída" width="10%"/>
+						</listhead>
+					<listitem id="lstit_vazio">
+					<listcell label = "----" />
+					<listcell label = "----"/>
+					<listcell label = "----"/>
+					<listcell label = "----"/>	
+					<listcell label = "----"/>
+					<listcell label = "----"/>
+					</listitem>
+					
+					</listbox>
+				
+				</cell>
+				
+			</row>
+       
+         </rows>
+       </grid>
+         <separator/>
+       <separator/>
+       <div >  <space/><space/>
+     <label style="font-weight:bold" value="ALTERAÇÃO DE DADOS DA HOSPEDAGEM" />
+     <separator/>
+     
+     </div> 
+       
+       <div align="center" style="text-align:center;"  height="70%">
+      <separator/>
+       <separator/>
+     
+     <groupbox>
+     <div align="center" style="text-align:center">
+        <label value="Alterar data de saída:" style="font-weight:bold;" /><space/> 
+        <datebox  disabled="true" id="dbx_dataout"></datebox>
+    
+     
+     </div>
+       
+     <div  style="text-align:center">
+      <separator/>
+       <separator/>
+       <separator/>
+     
+     </div>
+     <div align="center">
+     <label value="Alterar categoria de quarto:" style="font-weight:bold;"/> <space/>
+					<combobox disabled="true" id="cbx_categoria"  width="30%" >			
+					  <comboitem  label="${each.designacao}" value="${each}" forEach="${bl_actualizar$ActualizarHospedagemController.categorias}"/>	
+					</combobox>		
+								
+					 <separator/>
+       <separator/>
+       <separator/>
+     </div>  
+      <label value="Seleccione o quarto:" style="font-weight:bold;"/><space/> 
+					<combobox disabled="true" id="cbx_quarto" width="20%" >
+					</combobox>
+					  <separator/>
+       <separator/>
+       <separator/>
+       <separator/>
+       </groupbox>
+       <separator/>
+       <separator/>
+       <separator/>
+      
+   </div>
+
+     </div>
+     
+     <div style="text-align:center">
+          <label style="font-weight:bold;font-size:20px;color:blue" value="VALOR A PAGAR:" />
+          <label id="lab_valor" style="font-weight:bold;font-size:20px;" value="0" />
+          <label style="font-weight:bold;font-size:20px;" value=" MZN"/>
+          <separator/>
+          <separator/>
+          </div>
+          <div style="text-align:right" >
+          <button id="btn_cancelar" label="Cancelar" /> <space/><space/>
+          <button disabled="true" id="btn_actualizar" label="Actualizar" />
+          </div>
+     </div>
+    
+    </center>
+</borderlayout>
+
+
+</zk>

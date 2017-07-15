@@ -1,0 +1,27 @@
+<zk>
+  
+    <style src="/widgets/layout/style.css"/>
+     <div sclass="banerDireito" align="center">
+       <vlayout  >
+	        <div >
+	           <image sclass="icon-login" src="/widgets/Imagens/IconLogin.jpg"/>
+	         </div>
+	        <button label="Log In" id="btn_login" width="80px" />             
+         </vlayout> 
+	   
+	   <window id="win_login" width="30%" height="30%" visible="false"  border='0' apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.Barner_direito_controller" >
+	     <label value="Login" />
+	     
+        <grid sclass="loginGrid">            
+            <rows>
+                <row>User Name : <textbox id="txt_user" value="" /></row>
+                <row>Password : <textbox id="txt_password" type="password"/></row>
+                <row><cell sclass="loginCtl" colspan="2"><vlayout>
+                    <button label="Log In" width="100px" id="btn_login2"/>
+                    <label id="mesg"/>
+                </vlayout></cell></row>
+            </rows>
+        </grid>
+    </window>
+     </div>
+</zk>

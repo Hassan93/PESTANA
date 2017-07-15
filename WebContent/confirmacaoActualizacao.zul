@@ -1,0 +1,33 @@
+<?page title="Auto Generated index.zul"?>
+<zk>
+
+<zscript>
+  import mz.PestanaRovuma.Hotel_and_Resorts.model.Promocao;
+    
+    Promocao servico = (Promocao)Executions.getCurrent().getArg().get("serv");
+</zscript>
+
+ <window id="wd_confirma" mode="highlighted" visible="false"  width="25%" height="100px" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.ActualizarHospedagemController" closable="true">
+  <borderlayout>
+   <north>
+     <div>
+        <label style="font-size:20px;font-weight:bold;" value="Confirmar actualização" />
+     </div>
+   </north>
+   <center border="0">
+     <div align="center">
+      <separator/>
+      <separator />
+        <label style="font-size:14px" value="Deseja actualizar a hospedagem?"/>
+     </div>
+   </center>
+   <south border="0">
+     <div align="center" >
+        <button id="btn_nao" label="Não" /> <space/><space/>
+        <button id="btn_sim" label="Sim" />
+     </div>
+   </south>
+  </borderlayout>
+</window>
+
+</zk>

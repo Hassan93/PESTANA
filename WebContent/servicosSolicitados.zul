@@ -1,0 +1,62 @@
+<zk>
+   <zscript>
+      
+    
+   </zscript>
+   
+        <div id="div_servico" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.SolicitarServicosController"  >
+		    <div>
+		         <div align="center">
+		        <label value="Serviços Solicitados" style=" font-size:20pt;font-weight:bold" /> <space/><space/>
+		        </div>
+		        
+		         <separator bar="true" />
+		    </div>
+		    <separator/>
+		    
+		    <div align="left">
+		         <textbox id="txt_pesquisar" ></textbox> <space/><space/>
+		          <button  id="btn_pesquisar" label="procurar servico" /><space/>
+		          <button id="btn_canc" label="cancelar" visible="false"/>
+		           <space spacing="400pt"/>
+		       
+		    </div>
+		   <separator/>
+		   <separator/>
+		    <div>
+		    <listbox id="lista_servicosSol"   >
+		        
+		        <listhead >
+		            <listheader align="center"  label="Hospede"  />
+		            <listheader align="center"  label="Serviços" />
+		            <listheader align="center"  label="Quarto" />
+		            <listheader align="center"  label="Nr de utente" />
+		            <listheader align="center"  label="Preco (MZN)" />
+		            <listheader align="center"  label="Data de solicitação" />
+		            <listheader align="center"  label="Data de entrega" />
+		            <listheader align="center"  label="Pagamento" />
+		            <listheader align="center"  label="Descartar" />
+		        </listhead>
+		            <listitem value="${each}" forEach="${div_servico$SolicitarServicosController.alocacao_has_servicos}">
+		            <listcell label="${each.alocacao.hospede.nome}" />
+		            <listcell label="${each.servico.designacao}" />
+		            <listcell label="${each.alocacao.quarto.designacao}" />
+		            <listcell label="${each.utentes}" />
+		            <listcell label="${each.servico.preco}"/>
+		            <listcell label="${each.data_de_solicitacao}"/>
+		            <listcell label="${each.data_de_uso}"/>
+		            <listcell >
+		                 <button   forward="onClick$celula_a" image="/widgets/Imagens/actualizar.png" />
+		            </listcell>
+		            <listcell>
+		                 <button  forward="onClick$celula_r" image="/widgets/Imagens/remove.png" />
+		            </listcell>
+		           
+		        </listitem>
+		    </listbox>
+		         </div>
+		           <div align="right"> 
+		           <separator/>      
+		          </div>   
+		          </div>
+</zk>

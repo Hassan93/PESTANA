@@ -1,0 +1,75 @@
+<zk>
+    <window border="0" width="40%" height="100%" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.SubmeterComentarioController">
+         
+        <div align="center"> 
+            <label style=" font-size:18pt;font-weight:bold"> Submenter Comentario</label>          
+        </div>
+   
+   
+        <separator/> 
+		   <separator/>   
+		    <vlayout>
+		     <hlayout>
+		       <label value="Codigo da hospedagem" />	<space/><space/> 		
+			   <textbox id="txt_codHospde" width="100%" height="25%" constraint="no empty"/>				
+		     </hlayout>
+		        <div align="right" >
+		             <button  id="btn_ok" label="ok" />
+		        </div>
+	      </vlayout>
+	    
+	    <vbox ></vbox>
+	     <separator/> 
+		     <separator/> 
+		      <div>	
+		        <label value="Area de avaliação:" tooltiptext="" /> 
+				 <vlayout>
+				   <div align="center" >
+				   <vbox>
+				    <radiogroup id="rdo_area" name="Nivel de serviço" orient="vertical">
+		              <radio id="rdo_servico" value="Serviços" label="Serviços" disabled="true"/> 
+				      <radio id="rdo_hospedagem" value="Hospedagens" label="Hospedagens" disabled="true"  /> 
+		            </radiogroup>
+		            </vbox>
+		           </div>
+				  </vlayout>
+			  </div>  
+			  
+		   <separator/> 
+		     <separator/>
+		       <div>
+				 <label value="Avaliação:" tooltiptext="Avalie a area selecionada anteriorimente" /> 
+				
+			      <vlayout >
+			         <div align="center" >
+			         <vbox>
+				       <radiogroup id="rdo_avaliacao" name="Nivel hospedagem" orient="vertical">
+		                 <radio id="rdo_hosp_bom" value="Positivo" label="Positivo" disabled="true"  /> 
+				         <radio id="rdo_hosp_mau" value="Negativo" label="Nagativo"  disabled="true" /> 
+				         <radio id="rdo_hosp_excelente" value="Excelente" label="Excelente"  disabled="true" />
+		           	  </radiogroup>
+		           	 </vbox>
+		           	</div>				 
+				  </vlayout>
+				</div>
+						
+			<separator/> 
+		     <separator/>
+		       <div> 
+		           <hlayout>
+				   <label value="Comente aqui..." /> 
+				     <div align="right">
+				       <textbox id="txt_comentario" width="100%" constraint="no empty" multiline="true" rows="4" disabled="true" />
+				     </div>
+				   </hlayout>
+			  </div>
+			 
+		     <separator/>
+		     <separator/> 
+		     <separator/>	
+		         <div align="center">			
+				   <button id="btn_submeter" label="Submeter" disabled="true" />
+				 </div>
+    </window>
+
+</zk>

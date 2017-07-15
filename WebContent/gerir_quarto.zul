@@ -1,0 +1,150 @@
+<zk>
+ <style src="/widgets/layout/style.css" />
+    
+     <window border="0" mode="highlighted" width="50%" height="70%" id="win_reg_quarto" visible="false" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.GerirQuartoController"  >
+           
+         		<borderlayout id="bdr_reg_quarto">
+         		 <north border="normal">
+		            <div align="center">  
+		              <div>
+		               <space/> <space/>
+		             	 <label value="Registar Quarto" style="font-size:20px;" />
+		              </div>
+		              <space height="10px"/>
+		             </div> 
+		          </north>
+		          
+		          <center border="0">  
+		             <div align="center">
+		                  <div>
+			                 <separator/>
+			                 <label value="Designação" style="font-size:15px;" />
+			                 <space/> <space/>
+			                 <textbox sclass="fn-type" id="txt_design" width="60%" constraint="no empty"  />
+			               </div>
+			 			               
+			               <div>
+			                <separator/>
+			                 <label value="Maximo Ocupantes" style="font-size:15px;" />
+			                <space/> <space/>
+			                 <textbox id="txt_cap" sclass="fn-type" width="60%" constraint="no empty"/>
+			               </div> 
+			               
+			               <div>
+			                <separator/>
+			                 <label value="Localização" style="font-size:15px;" />
+			                <space/> <space/>
+			                 <textbox id="txt_endereco" sclass="fn-type" width="60%" constraint="no empty"/>
+			               </div> 
+			               
+			            <!--  <vlayout>
+						 <label> Carrege imagem para categoria</label>
+							<button label="Upload" upload="true">
+								<attribute name="onUpload">
+									org.zkoss.util.media.Media media = event.getMedia();
+									if (media instanceof org.zkoss.image.Image) {
+										org.zkoss.image.Image img = (org.zkoss.image.Image) media;
+										if (img.getWidth() > img.getHeight()){
+											if (img.getHeight() > 100) {
+												pics.setHeight("100px");
+												pics.setWidth(img.getWidth() * 100 / img.getHeight() + "px");
+											}
+										}
+									
+										if (img.getHeight() > img.getWidth()){
+											if (img.getWidth() > 150) {
+												pics.setWidth("150px");
+												pics.setHeight(img.getHeight() * 150 / img.getWidth() + "px");
+											}
+										}
+										pics.setContent(img);
+									} else {
+										Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
+										break; //not to show too many errors
+									}
+								</attribute>
+							</button>
+						<image id="pics" />
+					</vlayout>	
+			               --> 
+			               
+						    <div>
+				                 <separator/><separator/>
+				                   <button id="btn_cancel" label="Cancelar"/> 
+					               <button id="btn_add_quarto" label="Adicionar"/> 
+						   </div>
+			                 
+		               </div> 
+		                
+				  </center>          		
+         		</borderlayout>               
+            
+        </window>        
+    
+    <div id="bdr_gerQuart" width ="90%" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.GerirQuartoController">
+        
+     
+      <div >
+			 <div>
+         <div align="center">
+        <label value="Gestão de Quartos" style=" font-size:25pt;font-weight:bold" /> <space/><space/>
+        </div>
+        
+         <separator bar="true" />
+      </div>
+			         
+			    <div align="right">
+				   <combobox id="cbx_categoria" constraint="no empty"  width="23%"  value="Seleccione a categoria">
+				     <comboitem label="Todos" value="todos"></comboitem>
+				    <comboitem label="${each.designacao}" value="${each}" forEach="${bdr_gerQuart$GerirQuartoController.categorias}" /> 
+				   </combobox>	
+				</div>
+				<div>
+										
+				<separator/>
+                <separator/>	        
+				<div>
+					<listbox id="lst_quarto" rows="13">
+					<listhead>
+					    <listheader label="Id de quarto" />
+					  	<listheader label="Designação" />
+					  	<listheader label="Categoria" />
+						<listheader label="Localização" />
+						<listheader label="Numero de ocupantes"/>
+						<listheader label="actualizar" />
+						<listheader label="Eliminar" />
+					</listhead>
+						<listitem value="${each}" forEach="${bdr_gerQuart$GerirQuartoController.quartos}">
+						<listcell label="${each.id_Quarto}" />
+						<listcell  label = "${each.designacao}"/>
+						<listcell  label="${each.categoria.designacao}" />
+						<listcell label = "${each.localizacao}"/>
+						<listcell label = "${each.ocupantes}"/>	
+						 <listcell >
+	                        <button   forward="onClick$celula_a" image="/widgets/Imagens/actualizar.png" />
+	                    </listcell>
+	                    <listcell>
+	                        <button  forward="onClick$celula_r" image="/widgets/Imagens/remove.png" />
+	                    </listcell>
+	                    </listitem>
+					 </listbox>
+					     </div>
+					     
+					      <separator/>
+					      <separator/>
+					      </div>
+					        <div align="right">
+								<label visible="false" value="Adicione novo quarto com botão a seguir" id ="lb_add"/>
+							 <div>
+						         <button id="btn_addQuarto" label="adicionar"  visible="false" />	
+						        </div>
+						    </div>					   
+							
+							
+			       </div>  
+					  
+             
+         </div>
+	 
+	
+ </zk>

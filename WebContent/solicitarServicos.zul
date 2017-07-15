@@ -1,0 +1,59 @@
+<zk>
+      
+       <borderlayout id="bdl_solServico" visible="true" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.SolicitarServicosController">
+		   <north border="normal">
+		       <div align="center">
+		          <label style=" font-size:18pt;font-weight:bold" value="Solicitar Serviços de quarto"/>
+		         <separator/>
+		       </div>
+		   </north>
+		   
+		   <center border="0" >
+		    <div align="center">
+		    <separator/> 
+		    <separator/>   
+		      <vlayout>
+		        <hlayout>
+		          <label value="Codigo da hospedagem" />	<space/><space/> 		
+			      <textbox id="txt_codHospde" width="100%" height="25%" constraint="no empty"/>	
+			       <button  id="btn_ok" label="ok" />			
+		        </hlayout>
+	         </vlayout>
+		   
+		     <separator/>
+		     <separator/>
+		         <hlayout>
+			     <label value="Seleccione o serviço" /> <space/><space/> 
+			      <div>
+			         <combobox id="cbx_servico"  constraint="no empty"  width="30">
+						<comboitem label="${each.designacao}" value="${each}" forEach="${bdl_solServico$SolicitarServicosController.servicos}"/>
+					</combobox>
+			      </div>
+			     </hlayout>
+			  					
+		     <separator/>
+		     <separator/>
+		         <hlayout>
+		         <label value="Data de entrega" /> <space/><space/> 
+				 <datebox  id="dtb_dataEntrega"  width="100%" height="25%" constraint="no empty" />				
+				 </hlayout>
+			 <separator/>
+		     <separator/>
+		         <hlayout>
+		         <label value="Hora de entrega" /> <space/><space/> 
+		         <timebox id="dtb_horaEntrega"  width="180%" height="35%" constraint="no empty" />				
+				 </hlayout>
+				 
+		     <separator/>
+		     <separator/>
+		          <button id="btn_solicitar" label="Solicitar" />   
+		     </div>
+		    
+		    </center>
+		</borderlayout>
+		
+		
+        
+    
+
+</zk>

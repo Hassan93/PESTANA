@@ -1,0 +1,84 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<div	id="win_checkIn" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.checkInController">
+<div align="center">
+        <label value="CheckIn" style=" font-size:25pt" />
+    </div>
+<div style="text-align:center">
+		<label value=" codigo da reserva"/> 
+		 <textbox id="txt_codigo"    width="200px"  constraint=""/>
+         <button id="btn_ok"  label="OK" />
+</div>  
+
+<separator/>
+<separator/>      
+<groupbox id="gb_informacao" visible="false"  >
+
+		<caption label="Informacoes da reserva"   style=" font-size:18pt" />
+
+			         <div>
+					        <label value="Nome  do cliente         :"/>
+					        <label id="lb_nome" />
+		             </div>
+
+					 <separator/>		           
+			         <div>
+					        <label value="Hora de saida    : 13:30"/>
+					        <label id="lb_HoraSaida"/>
+		             </div>
+	
+
+<div>
+    <listbox id="lista_ocupante"   visible="false">
+        
+        <listhead >
+            <listheader align="center"  label="Nome do ocupante" width="20%"/>
+            <listheader align="center"  label="Categoria do quarto" width="25%"/>
+            <listheader align="center"  label="Designacao do quarto" width="20%"/>
+            <listheader align="center"  label="Data de entrada" width="14%"/>
+             <listheader align="center" label="Data de saida" width="14%"/>
+             <listheader align="center" label="Preco da categoria" width="14%"/>             
+             <listheader align="center" label="Quantidade de dias" width="14%"/>             
+             <listheader align="center" label="Valor total a pagar" width="14%"/>
+        </listhead>
+    </listbox>
+    </div>
+</groupbox>
+
+<groupbox visible="false" id="gb_valorTotal">
+<caption label="Valor a pagar" style=" font-size:18pt" />
+	         
+			         <div>
+					        <label value="Quantidade de quartos   :"/>
+					        <label id="lb_quantQuartos"/>
+		             </div>
+		             					 <separator/>		           
+		             
+			         <div>
+					        <label value="Valor total a pagar    :"/>
+					        <label id="lb_custo"/>
+		             </div>
+</groupbox>
+<groupbox visible="false" id="gb_pagamento">
+<caption label="Efectuar pagamento"  style=" font-size:18pt"/>
+
+                <label value="Pagar via:"/>   
+                 <hbox pack="center" width="440px" spacing="2.3em">
+            <vbox>
+                <combobox id="cmbColor" width="150px" autodrop="true" >
+                        <comboitem label="cartao de credito"/>
+                        <comboitem label="cash"/>
+                </combobox>
+                </vbox>
+                </hbox>
+           
+                <hlayout>
+                    <checkbox id="confirmacao"/> <label value="Pagamento efectuado com sucesso"/>
+                </hlayout>
+           
+                <hlayout>
+                    <button id="btn_confirmar" label="Confirmar" />
+                </hlayout>
+</groupbox>
+</div>
+</zk>

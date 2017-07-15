@@ -1,0 +1,14 @@
+<zk>
+  
+    <style src="/widgets/layout/style.css"/>
+     <div sclass="banerDireito" align="center">
+      <vlayout  apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.Barner_logout_controller">
+	        <div >
+	           <image sclass="icon-login" src="/widgets/Imagens/IconLogin.jpg"/>
+	         </div>
+	        <button label="Log Out" id="btn_logout" width="80px" />             
+         </vlayout> 
+	   
+	
+     </div>
+</zk>

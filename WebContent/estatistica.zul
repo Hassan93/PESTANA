@@ -1,0 +1,90 @@
+<?page title="Estatistica" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="win_estatistica" title="Estatistica"  apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.EstatisticaController">
+    <div align="center">
+        <label value="Estatistica" style=" font-size:25pt" /><separator bar="true"/>
+    </div>
+    <div align="center">
+    <space /><space /><space /><space /><space /><space />
+    	<label value="Periodo Inicial"/>
+    	<datebox id="db_inicio" placeholder="introduza a data de inicio"/><space /><space /><space /><space />
+   
+    	
+    	<label  value="Periodo final"/>
+    	<datebox id="db_final" placeholder="introduza a data de inicio"/>
+    </div><separator/>
+    <div align="center">
+     <label value="Objecto da Estatistica:"/>   
+          <hbox pack="center" id="ci_objecto" width="440px" spacing="2.3em">
+            <vbox>
+                <combobox id="cbx_objecto" width="150px" autodrop="true" >
+                        <comboitem label="Reservas" value="1"/>
+                        <comboitem label="Hospedagens" value="2"/>
+            			<comboitem label="Categoria de quarto" value="2"/>
+                        <comboitem label="Servicos do hotel" value="2"/>            			
+                </combobox>
+            </vbox>
+          </hbox>
+     </div>
+     
+     
+     <div>
+    <listbox id="lista_reserva"   visible="false">
+        
+        <listhead >
+            <listheader align="center"  label="Codigo da reserva" width="15%" />
+            <listheader align="center"  label="Nome do cliente" width="20%"/>
+            <listheader align="center"  label="Categoria" width="25%"/>
+            <listheader align="center"  label="Designacao do quarto" width="7%"/>
+            <listheader align="center"  label="Data de entrada" width="14%"/>
+             <listheader align="center" label="Data de saida" width="14%"/>
+             <listheader align="center"  label="Preco por quarto" width="14%"/>
+             <listheader align="center" label="Valor total a pagar" width="14%"/>
+        </listhead>
+    </listbox>
+    </div>
+         <div>
+    <listbox id="lista_hospedagem"   visible="false">
+        
+        <listhead >
+            <listheader align="center"  label="Codigo da hospedagem" width="15%" />
+            <listheader align="center"  label="Codigo da reserva" width="20%"/>
+            <listheader align="center"  label="Designacao da categoria " width="25%"/>
+            <listheader align="center"  label="Designacao do quarto" width="20%"/>
+            <listheader align="center"  label="Nome do hospede" width="14%"/>
+             <listheader align="center" label="Data de checkIn " width="14%"/>
+             <listheader align="center"  label="Data de checkOut" width="14%"/>
+        </listhead>
+    </listbox>
+    </div>   
+         <div>
+         <label  visible="false" style=" font-size:15pt" value="Valor total ganho:" id="lb_text"/>
+         <label  visible="false" id="lb_valor" style=" font-size:15pt"/>
+    <listbox id="lista_servico"    visible="false"> 
+        <listhead >
+            <listheader align="center"  label="Codigo do servico" width="15%" />
+            <listheader align="center"  label="Designacao de servico" width="20%"/>
+            <listheader align="center"  label="Nr de vezes que o servico foi solicitado" width="45%"/>
+            <listheader align="center"  label="Valor total a pagar" width="20%"/>
+           
+        </listhead>
+    </listbox>
+    </div> 
+    <div>
+    <label  visible="false" style=" font-size:15pt" value="Valor total ganho:" id="lb_catText"/>
+         <label  visible="false" id="lb_catValor" style=" font-size:15pt"/>
+    
+    <listbox id="lista_categoria"    visible="false">
+        
+        <listhead >
+            <listheader align="center"  label="Codigo da categoria" width="15%" />
+            <listheader align="center"  label="Designacao da categoria" width="20%"/>
+            <listheader align="center"  label="Descricao da categoria " width="25%"/>
+            <listheader align="center"  label="Preco da categoria" width="20%"/>
+            <listheader align="center"  label="Nr de vezes solicitado" width="14%"/>
+             <listheader align="center" label="valor total ganho " width="14%"/>
+        </listhead>
+    </listbox>
+    </div>            
+</window>
+</zk>

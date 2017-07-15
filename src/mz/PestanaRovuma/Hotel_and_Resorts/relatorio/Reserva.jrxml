@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2015-11-22T12:37:59 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reserva" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="112f02c6-4be4-4087-9a64-6ebe70f579ba">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (3)"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="id_reserva" class="java.lang.Long"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="proposito" class="java.lang.String"/>
+	<field name="id_quarto" class="java.lang.Long"/>
+	<field name="data_checkin" class="java.util.Date"/>
+	<field name="data_checkout" class="java.util.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="85" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="150" height="85" uuid="356ec11a-0b61-4ccb-8ff3-3a7657851102"/>
+				<imageExpression><![CDATA["/home/hassan/Projecto_Eclipse/SISPESTANA/src/mz/PestanaRovuma/Hotel_and_Resorts/relatorio/Header.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="187" y="10" width="181" height="64" uuid="73bc09cd-7e80-4180-8a4c-a8987cbb92dc"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Pestana Rovuma Hotel and Resorts]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="19" width="100" height="30" uuid="31288e7e-c9af-4cbf-b194-c2c64a43f453"/>
+				<text><![CDATA[Data :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="55" width="100" height="30" uuid="9ca8d8ed-0432-4f75-890c-82865140a177"/>
+				<text><![CDATA[Codigo da Reserva]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="480" y="55" width="100" height="30" uuid="b8967a0d-6280-40d3-a271-f935b5ae86d2"/>
+				<textFieldExpression><![CDATA[$F{id_reserva}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="189" y="5" width="177" height="30" uuid="06327714-0bdf-4a94-a647-8cb50e047e60"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Dados da Reserva]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="111" height="30" uuid="ce036938-0b55-4023-bcd2-0e60f87190e6"/>
+				<text><![CDATA[nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="0" width="111" height="30" uuid="75843add-b640-4dc8-b300-6efd855e09dd"/>
+				<text><![CDATA[proposito]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="111" height="30" uuid="381a651f-2243-4eea-9238-6e563ed3ac69"/>
+				<text><![CDATA[id_quarto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="111" height="30" uuid="d7945a1b-d907-46c6-8608-7ea7f059faae"/>
+				<text><![CDATA[data_checkin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="111" height="30" uuid="d6cbd4f7-edb9-419e-96bc-23b21b8c42c8"/>
+				<text><![CDATA[data_checkout]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="15" width="111" height="30" uuid="75373163-dffb-43eb-96f4-f0ff748e90b0"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="15" width="111" height="30" uuid="45c690bb-feb9-428b-9945-9b38bd2358f1"/>
+				<textFieldExpression><![CDATA[$F{proposito}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="15" width="111" height="30" uuid="ac5aaa38-5328-458c-89c7-af54a7d95a4c"/>
+				<textFieldExpression><![CDATA[$F{id_quarto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="15" width="111" height="30" uuid="93689a64-2823-4d36-bf99-702cd702aa09"/>
+				<textFieldExpression><![CDATA[$F{data_checkin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="15" width="111" height="30" uuid="f10ba172-f68a-426b-a442-6a040105474e"/>
+				<textFieldExpression><![CDATA[$F{data_checkout}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

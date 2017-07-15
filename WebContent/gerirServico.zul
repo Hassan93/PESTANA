@@ -1,0 +1,102 @@
+<zk>
+    
+    <div id="bl_servico" width ="90%" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.gerirServicoController"  >
+    <div>
+         <div align="center">
+        <label value="Gerir serviços de quarto" style=" font-size:25pt;font-weight:bold" /> <space/><space/>
+        </div>
+        
+         <separator bar="true" />
+    </div>
+    <separator/>
+    
+    <div align="left">
+          
+         <textbox id="txt_pesquisar" ></textbox> <space/><space/>
+          <button  id="btn_pesquisar" label="procurar servico" /><space/>
+          <button id="btn_canc" label="cancelar" visible="false"/>
+           <space spacing="250pt"/>
+           <button  id="btn_add" label="Adicionar Servico" image="/widgets/Imagens/add.png"  />
+       
+    </div>
+   <separator/>
+   <separator/>
+    <div>
+    <listbox id="lista_servicos" rows="13" >
+        
+        <listhead >
+            <listheader align="center"  label="codigo" width="15%" />
+            <listheader align="center"  label="Designacao" width="20%"/>
+            <listheader align="center"  label="Descricao" width="25%"/>
+            <listheader align="center"  label="Preco (MZN)" width="7%"/>
+            <listheader align="center"  label="Actualizar" width="14%"/>
+             <listheader align="center" label="Remover" width="14%"/>
+        </listhead>
+            <listitem value="${each}" forEach="${bl_servico$gerirServicoController.servicos}">
+            <listcell label="${each.codigo}" />            
+            <listcell label="${each.designacao}" />
+            <listcell label="${each.descricao}" />
+            <listcell label="${each.preco}"/>
+            <listcell >
+                 <button   forward="onClick$celula_a" image="/widgets/Imagens/actualizar.png" />
+            </listcell>
+            <listcell>
+                 <button  forward="onClick$celula_r" image="/widgets/Imagens/remove.png" />
+            </listcell>
+           
+        </listitem>
+    </listbox>
+         </div>
+           <div align="right"> 
+           <separator/>      
+          </div>   
+          </div>
+    
+       
+    
+     <window id="win_addService" width="50%" height="50%" mode="highlighted" border="0" visible="false"  apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.gerirServicoController">
+          <borderlayout >
+      
+        <center>
+        <div align="center">
+             <div align="center">
+                 <label style="font-size:30;font-weight:bold" value="ADICIONAR SERVIÇO" />
+            <separator/>
+            <separator/>
+            <separator/>        
+             </div>
+        
+            <div>
+               <label value="Designacao do servico:" style="font-size:18;font-weight:bold" />  <space/>
+               <textbox  id="txt_designacao" constraint="no empty"  />
+            </div>
+            <separator/>
+            <div>
+                 <label value="Descriçao:" style="font-size:18;font-weight:bold" />  <space/>
+                <textbox rows="2"  id="txt_descricao" constraint="no empty" />
+            </div>
+             <separator/>
+            <div>
+             <label value="Preco unitario:" style="font-size:18;font-weight:bold" />  <space/>
+             <textbox  id="txt_preco" constraint="no empty"/><space/>MNZ
+            </div>
+             <separator/> <separator/>
+              <separator/> <separator/>
+               <separator/> <separator/>
+            <div>
+                <button id="btn_cancelar" label="cancelar" />
+                  <space/><space/>
+                    <button  id="btn_addService" label="adicionar" />
+                
+               
+                    
+               
+            </div>
+            </div>
+        </center>
+    </borderlayout>
+     </window>    
+     
+    
+    
+</zk> 

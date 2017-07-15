@@ -1,0 +1,266 @@
+<zk>
+	<style src="/widgets/layout/style.css" />
+	
+
+	<borderlayout sclass="complex-layout" id="reserva_form1" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.Reserva_form1Controller">
+		<north border="0">
+			 <div>
+              <include src="/header.zul"  />
+            </div>
+		</north>
+		<west vflex="1">
+			
+			<include src="/banerEsquerda.zul"/>
+		</west >
+		<east hflex="1">
+		  <include src="/barnerDireito.zul" />
+		</east>
+		<center sclass="inner-border">
+		    <borderlayout  apply="" >
+		       
+		           <north size="20%"> 
+		           <div id="divNorte"> 
+			            <div align="center" id="divGarantirReserva" visible="false">
+				              <label sclass="header-text" >Garantia da Reserva</label>
+				         </div>
+		             </div>
+		            </north>
+		         
+		         <center>
+		         <div>
+		            <div id="divprimeira">
+		               <grid id="minha_Grelha">
+			             <columns>
+						
+							<column label="Categoria dos Quartos" align="center"/>
+							
+							<column label="Preço por Noite" align="center"/>
+							<column label="Serviços Inclusos" align="center"/>
+						 
+							
+						</columns>
+						<rows>
+						    <row forEach="${reserva_form1$Reserva_form1Controller.categorias}"> 
+								<checkbox id="chck_${each.getDesignacao()}" label="${each.getDesignacao()}" value="${each.getDesignacao()}"/>
+								<label value="${each.getPreco()}"/>
+								<label value="${each.getDescricao()}"/>
+											
+                             </row>
+                             </rows>
+						
+					</grid>
+					
+					<div id="divLista" visible="false">
+						<listbox id="lst_quart" multiple="true" checkmark="true" mold="paging" >
+						        <listhead>
+						            <listheader label="Quartos" />
+						            <listheader label="Nr de Ocupantes" />
+						            <listheader label="Localização" />
+						           
+						        </listhead>
+					    </listbox>
+				    <space height="10px"/>
+				    <div align="right" >
+				      
+					  <button id="btn_reservar0" disabled="true" label="Reserva"></button>
+					</div>
+					
+			         </div>      
+			  
+                  <div id="dadoOcupantes" visible="false">
+					  <vlayout>
+					    <hlayout>
+					    <label>Designação do Quarto:</label>
+					    <label id="lb_quarto"></label>
+					    </hlayout>
+					    <hlayout>
+					    <label>Localização do Quarto:</label>
+					    <label id="lb_loc"></label>
+					    </hlayout>
+					  </vlayout>
+					    <grid>
+						   <rows>
+						     <row>
+						   
+					             <label>Nome de um dos Ocupantes: </label>
+					       
+					             <textbox id="txt_nomeOcupante" tooltiptext="Nome de um dos Ocupantes"/>
+					             <label>Data Check In</label>
+					             <datebox id="data_checkIn_Ocup" constraint="no empty, no past"></datebox>
+					          </row>
+					         
+					           <row>
+						        	<label>Proposito da viagem : </label>
+						            <radio id="rd_laser" label ="Laser" value ="laser"/>     
+						      	    <radio id="rd_trabalho" label="Trabalho" value="trabalho"/>
+						      </row>
+				        
+				             <row>
+					       		 <label>Pedido Especial a Considerar: </label>
+					       		 <textbox id ="txt_pedido" tooltiptext="peça aqui" />
+					       		 <label>Data Check Out</label>
+					       		 <datebox id="data_checkOut_Ocup" constraint="no empty, no past"></datebox>
+					          </row>
+			          
+			            </rows>
+			            </grid>
+			             <div align="right" >
+				      
+					  <button id="btn_ocupante" disabled ="true" label="Submeter"></button>
+					</div>
+				
+	         </div>	
+	         <div align="center">
+					<hlayout>
+					   
+							<button id="btn_primeiro" label="1" disabled="false" width="10px" />
+							<space width="10px"/>
+							<button id="btn_segundo" label="2" disabled="true" width="10px"/>
+							<space width="10px"/>
+							<button id="btn_terceiro" label="3" disabled="true" width="10px"/>
+						</hlayout>
+						<hlayout>
+			          
+			                  <button id="btn_Voltar0" label="Voltar" width="100px"/>
+			                   
+			                   <button id="btn_continuar0" label="Continuar" disabled="true" width="100px" />
+			             </hlayout>
+			           </div>
+		</div>
+	    <div id="divGarantiaReserva" visible="false">
+		             
+		             
+		                 <div>
+		                 <div align="center">
+					  <space height="10px"/>
+					  <vlayout spacing="10px">
+					    <hlayout >
+				          <label>Título: </label>
+				          <combobox id="cmb_titulo" autodrop="true" tooltiptext="Título">
+				          <comboitem  label="Mr" />
+				          <comboitem  label="Ms"/>
+				          <comboitem  label="Sr"/>
+				          <comboitem  label="Mdm"/>
+				          </combobox>
+				          <label>Nome: </label>
+				       
+				        <textbox id ="txt_nome" tooltiptext="Primeiro Nome" ></textbox>
+				        <space width="60px"/>
+				        <label>Apelido: </label>
+				        <space width="20px"/>
+				        <textbox id ="txt_apelido" tooltiptext="Último Nome"></textbox>
+				       
+			          </hlayout>
+			      
+			          <hlayout>
+	   			         <label>Endereço Electrónico: </label>
+				         <textbox id ="txt_end_Elct" tooltiptext="Exemplo: qualquerCoisa@gmail.com" width="250px"></textbox>
+				        
+				         <label>Confirmação do Endereço Electrónico: </label>
+				         <textbox id ="txt_conf_end_Elct" tooltiptext="Exemplo: qualquerCoisa@gmail.com" width="250px"></textbox>
+			           </hlayout>
+			           
+			       </vlayout>
+			     </div>
+		                <grid>
+			                <rows>
+			                <row>
+				               <label>Pais: </label>
+						       
+						       <combobox id="cmb_pais" autodrop="true" hflex="1" tooltiptext="Pais de Origem">
+						          <comboitem label="${each.toString()}" value="${each}" forEach="${reserva_form1$Reserva_form1Controller.paises}"></comboitem>
+					           </combobox>
+					        </row>
+					        <row>
+				       
+						        <label>Celular: </label>
+						       
+						        <textbox id ="txt_celular" hflex="1" tooltiptext="Contacto celular" ></textbox>
+					        </row>
+					        <row>
+					     
+				              <label>Tipo de Cartãod de Credito: </label>			       
+				       
+				              <combobox id="cmb_tipoCartao" hflex="1" autodrop="true" tooltiptext="Título">
+				              <comboitem  label="Visa" />
+				              <comboitem  label="MasterCasd"/>
+				          
+				            </combobox>
+				          
+				         
+				          <button id="btn_semCartao" label="Não Tenho Cartão" upload="true">
+ 								<attribute name="onUpload"><![CDATA[
+						            org.zkoss.util.media.Media media = event.getMedia();
+						            if (media instanceof org.zkoss.image.Image) {
+						                org.zkoss.zul.Image image = new org.zkoss.zul.Image();
+						                image.setContent((org.zkoss.image.Image)media);
+						                image.setParent(pics);
+						            } else {
+						                Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
+						                break;
+						            }
+        						]]></attribute>
+                       </button>
+    
+                       <vlayout id="pics" style="overflow:auto" />
+				          
+				          
+				        </row>
+				       
+				        <row>
+					       
+					        <label>Número do Cartão :</label>
+					        
+					        <textbox id ="txt_numCartao" hflex="1" tooltiptext="Último Nome" ></textbox>
+			     		</row>
+			       
+			            <row>
+			       
+					        <label>Data que Expira :</label>
+					        
+		                  <datebox id="date_data_Expira"  hflex="1" constraint="no empty, no past" />
+		                 
+		                </row>
+		           
+			            <row>
+			              <label>Código do Cartão :</label>
+				          <textbox id ="txt_cod_cartao" hflex="1" tooltiptext="código do cartão" ></textbox>
+			           </row>
+			      </rows> 
+			    </grid>
+			    </div>
+			     <space height="5px"/>
+			     <div align="center" >
+			        <vlayout spacing="7px">
+					   <hlayout>
+					   
+							<button id="btn_primeiro1" label="1" disabled="true" width="10px"/>
+							<space width="10px"/>
+							<button id="sbtn_egundo1" label="2" disabled="false" width="10px"/>
+							<space width="10px"/>
+							<button id="btn_terceiro1" label="3" disabled="true" width="10px"/>
+						
+			            </hlayout>
+			            <hlayout>
+			         
+			             <button id="btn_Voltar1" label="Voltar" width="100px" disabled="false"/>
+			             
+			             <button id="btn_continuar1" label="Continuar" width="100px" />
+			           </hlayout>
+			     </vlayout>
+			</div>
+      	</div>	    
+    
+
+
+   </div>
+			    
+			    		     </center>  
+			 </borderlayout>
+        </center>  
+		<south sclass="footer" height="40px">
+			<include src="/footer.zul"/>
+		</south>
+	</borderlayout>
+	</zk>
+

@@ -1,0 +1,51 @@
+<zk>
+    
+    <div id="bl_servico" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.ListarReservasController"  >
+    <div>
+         <div align="center">
+        <label value="Lista de Reservas" style=" font-size:25pt;font-weight:bold" /> <space/><space/>
+        </div>
+        
+         <separator bar="true" />
+    </div>
+    <separator/>
+    
+    <div align="left">
+          
+         <textbox id="txt_pesquisar" ></textbox> <space/><space/>
+          <button  id="btn_pesquisar" label="procurar cliente:" /><space/>
+          <button id="btn_canc" label="cancelar" visible="false"/>
+       
+    </div>
+   <separator/>
+   <separator/>
+    <div>
+    <listbox id="lista_servicos" rows="7" >
+        
+        <listhead >
+                            <listheader label="Cod_Reserva" width="8%"/>
+                            <listheader label="Apelido_cliente" width="15%"/>
+							<listheader label="Nome_cliente" width="15%"/>
+							<listheader label="Apelido_cliente" width="15%" />
+							<listheader label="data da reserva" width="15%" />
+        </listhead>
+            <listitem value="${each}" forward="onClick$info" forEach="${bl_servico$ListarReservasController.reservas}">
+            <listcell label="${each.id_Reserva}"/>   
+             <listcell label="${each.cliente.id_Cliente}"/> 
+             <listcell label="${each.cliente.nome}" />
+            <listcell label="${each.cliente.apelido}" />            
+            <listcell label="${each.dataReserva}" />
+        </listitem>
+    </listbox>
+         </div>
+           <div align="right"> 
+           <separator/>      
+          </div>   
+          </div>
+    
+       
+    
+    
+    
+    
+</zk> 

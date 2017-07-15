@@ -1,0 +1,129 @@
+<?page title="Cobrança de serviços" contentType="text/html;charset=UTF-8"?>
+<zk>
+<div id="bl_actualizar"  width="80%" height="900px"  apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.CobrancaController" >
+<borderlayout >
+   <north border="0">
+     <div>
+     <div align="center">
+     <separator/>
+      <separator/>
+     <label style="font-size:25px;font-weight:bold;" value="COBRANÇA DE SERVIÇOS DE QUARTOS"/> 
+     
+     
+     
+      <separator/>
+     <separator/>
+       </div>
+    
+   
+                    
+  </div>
+   </north>
+   <center>
+   <div>
+   
+   <div style="text-align:center">
+    <separator/>
+     <separator/>
+     <label style="font-weight:bold;" value="Código da alocação:"></label> 
+     <space/>
+     <textbox id="txt_codAlocacao" width="20%" value="${cod}" />
+     <space/> <button id="btn_ok" label="OK"></button>
+     <separator/> 
+     
+                    </div>
+   
+            
+            
+                <div align="center">
+                <separator/>
+               <separator/>
+                 <label style="font-size:25px;font-weight:bold;text-align:center;" value="Informação da hospedagem"/> 
+                 </div>
+                
+              <separator/>                 
+            <grid>
+          <rows>
+			<row>
+				<cell colspan="2">
+					<listbox id="list_alocacao">
+						<listhead>
+						    <listheader label="Cod_alocacao" width="10%" />
+							<listheader label="Nome do hóspede" width="15%"/>
+							<listheader label="Categoria do quarto" width="15%"/>
+							<listheader label="Ref. do quarto" width="10%"/>
+							<listheader label="Data de entrada" width="16%"/>
+							<listheader label="Data de saída" width="16%"/>
+						</listhead>
+					<listitem id="lstit_vazio">
+					<listcell label = "----" />
+					<listcell label = "----"/>
+					<listcell label = "----"/>
+					<listcell label = "----"/>	
+					<listcell label = "----"/>
+					<listcell label = "----"/>
+					</listitem>
+					
+					</listbox>
+				
+				</cell>
+				
+			</row>
+       
+         </rows>
+       </grid>
+                 
+              <separator/>
+              <separator/>
+           
+               <div align="center">
+                 <label id="lab_titleService" visible="false" style="font-size:25px;font-weight:bold;text-align:center;" value="Serviços solicitados"/>  
+                 </div>
+                      <separator/>
+            <grid id="gd_serv" visible="false" height="200px" >
+          <rows >
+			<row>
+				<cell  colspan="2">
+					<listbox id="list_servicos" >
+						<listhead>
+						    <listheader label="Escolha" width="8%" />
+							<listheader label="designacao" width="15%"/>
+							<listheader label="hora de uso" width="10%"/>
+							<listheader label="Data de uso" width="15%"/>
+							<listheader label="preco" width="10%"/>
+							<listheader label="Situação" width="10%" />
+						</listhead>
+						
+					</listbox>
+				
+				</cell>
+				
+			</row>
+       
+         </rows>
+       </grid>
+        <separator/><separator/>
+        <checkbox id="chx_todos" visible="false" label="Seleccionar todos"></checkbox>
+               <div style="text-align:center">
+      
+         
+                  <label id="lab_valPagar" visible="false" style="font-weight:bold;font-size:40;" value="VALOR A PAGAR PELOS SERVIÇOS: " /> 
+      <space/>            
+                 <label visible="false" style="font-weight:bold;font-size:40;" value="0" id="lb_valor"/> 
+                 <label id="lab_mzn" visible="false" style="font-weight:bold;font-size:40;" value=" MZN" />     
+                      
+      <separator/>
+        
+               <separator/>
+             
+              <separator/><separator/><separator/>
+           <div style="text-align:center">
+                    <button disabled="true" id="btn_pagar" label="PAGAR"  width="100px" height="30px" />
+         </div>
+      </div>  
+   </div>
+</center>      
+      
+</borderlayout>
+  </div>
+</zk>

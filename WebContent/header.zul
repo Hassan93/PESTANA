@@ -1,0 +1,28 @@
+<zk>
+      <style src="/widgets/layout/style.css"/>
+
+           <borderlayout style="background-color:blue" vflex="min" height="100px" apply="">
+              <west sclass="header" border="0">
+                  <div align="left" style="background-#F7F7F7">
+                 <image sclass="complex-layout-header-img"
+                        src="/widgets/Imagens/Header.jpg"/>
+                  </div>
+              </west>
+                          
+              <east width="280px" style="background-color:#F7F7F7" border="0">
+               <div sclass="header" >
+                        <textbox id="txt_pesquisa" value="" tooltiptext="Pesquise aqui"/>
+                        
+                        <button label="pesquisar"
+                            onClick="" />
+                </div>
+              </east>
+           </borderlayout>
+           
+           <div align="center">
+                      <include src="/menuprincipal.zul"/>  
+           </div>
+       
+       
+            
+</zk>

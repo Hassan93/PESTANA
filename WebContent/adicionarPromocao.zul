@@ -1,0 +1,73 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<zscript>
+  import mz.PestanaRovuma.Hotel_and_Resorts.model.Promocao;
+    
+    Promocao servico = (Promocao)Executions.getCurrent().getArg().get("1");
+   
+</zscript>
+    <window id="win_addServi" border="normal" width="50%" height="400px" mode="highlighted" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.ActualizaPromocaoController">
+        
+          <combobox visible="false">
+           <comboitem id="combo" value="${servico}"></comboitem>
+         </combobox>
+        
+          <borderlayout>
+    
+   <center border="0">
+    <div align="center">
+    <div align="center">
+     <label style="font-size:50;font-weight:bold" value="ADICIONAR PROMOÇÃO"/>
+     <separator/>
+     
+     </div>
+   
+     <separator/>
+     <separator/>
+     
+     <label  width="30" value="Descrição:"></label> 
+     <space/>
+     <textbox value="${servico.descricao}" id="txt_descricao" width="50%" constraint="no empty" multiline="true" rows="4"/>
+     <separator/> 
+     <separator/>   
+     <label>Categoria de quarto:</label> <space/><space/> 
+					<combobox id="cbx_categoria"  constraint="no empty"  width="30">
+						<comboitem label="${each.designacao}" value="${each}" forEach="${win_addServi$ActualizaPromocaoController.categorias}"/>
+					</combobox>
+        <separator/>
+       <separator/>
+       
+       <label>Quantidade mínima de quartos:</label> <space/><space/> 
+               <spinner value="${servico.quantidadeMinimaQuartos}" id="sp_quant" width="20%" ></spinner>
+      <separator/>
+       <separator/>
+       
+      <label>Desconto:</label> <space/><space/> 
+               <spinner value="${servico.reducaoPercentual}" id="sp_desconto" width="20%"></spinner> <space/> <label value="%"></label>
+           <separator/>
+       <separator/>    
+        <label>Data inicial:</label> <space/><space/> 
+        <datebox value="${servico.data_inicial}" id="dbx_datain" ></datebox>
+     
+          
+      <separator/>
+       <separator/>
+        <label>Data final:</label> <space/><space/> 
+        <datebox value="${servico.data_final}" id="dbx_dataout" > </datebox>
+        <separator/>
+       <separator/>
+       <separator/>
+       
+           <button id="btn_cancelar" label="cancelar" />
+                  <space/><space/>
+          <button id="btn_addPromo" label="Actualizar"/>
+         
+   
+     </div>
+    
+    </center>
+</borderlayout>
+     </window>    
+     
+</zk>

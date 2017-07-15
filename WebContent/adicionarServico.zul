@@ -1,0 +1,57 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<zscript>
+  import mz.PestanaRovuma.Hotel_and_Resorts.model.Servico;
+    
+    Servico servico = (Servico)Executions.getCurrent().getArg().get("1");
+   
+</zscript>
+    <window id="win_addServ" width="50%" height="50%" mode="highlighted" border="0" closable="true" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.ActualizaServicoController">
+       
+         <combobox visible="false">
+           <comboitem id="combo" value="${servico}"></comboitem>
+         </combobox>
+         
+         <borderlayout >
+      
+        <center>
+        <div align="center">
+             <div align="center">
+                 <label style="font-size:30;font-weight:bold" value="ACTUALIZAR SERVIÇO" />
+            <separator/>
+            <separator/>
+            <separator/>        
+             </div>
+        
+            <div>
+               <label value="Designacao do servico:" style="font-size:18;font-weight:bold" />  <space/>
+               <textbox value="${servico.designacao}" id="txt_designacao" constraint="no empty"  />
+            </div>
+            <separator/>
+            <div>
+                 <label value="Descriçao:" style="font-size:18;font-weight:bold" />  <space/>
+                <textbox value="${servico.descricao }" rows="2"  id="txt_descricao" constraint="no empty" />
+            </div>
+             <separator/>
+            <div>
+             <label value="Preco unitario:" style="font-size:18;font-weight:bold" />  <space/>
+             <textbox  value="${servico.preco}"  id="txt_preco" constraint="no empty"/><space/>MNZ
+            </div>
+             <separator/> <separator/>
+              <separator/> <separator/>
+               <separator/> <separator/>
+            <div>
+                <button id="btn_cancelar" label="cancelar" />
+                  <space/><space/>
+                    <button  id="btn_actual" label="actualizar" />
+                
+               
+                    
+               
+            </div>
+            </div>
+        </center>
+    </borderlayout>
+     </window>     
+</zk>

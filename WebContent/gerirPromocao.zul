@@ -1,0 +1,119 @@
+<zk>
+    
+    <div id="bl_servico"  width ="90%" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.gerirPromocaoController"  >
+    <div>
+         <div align="center">
+        <label value="Gerir Promoções" style=" font-size:25pt;font-weight:bold" /> <space/><space/>
+        </div>
+        
+         <separator bar="true" />
+    </div>
+    <separator/>
+    
+    <div align="right">
+          
+           <button  id="btn_add" label="Adicionar Servico" image="/widgets/Imagens/add.png"  />
+       
+    </div>
+   <separator/>
+   <separator/>
+    <div>
+    <listbox id="lista_servicos" rows="13" >
+        
+        <listhead >
+            <listheader align="center"  label="codigo" width="5%" />
+            <listheader align="center"  label="Descricao" width="13%"/>
+            <listheader align="center"  label="Categoria" width="10%" />
+            <listheader align="center"  label="Preco (MZN)" width="10%" />
+            <listheader align="center"  label="quant. min. quartos" width="15%" />
+            <listheader align="center"  label="Desconto" width="8%"/>
+            <listheader align="center"  label="Data inicial" width="10%"/>
+             <listheader align="center" label="Data final" width="10%"/>
+             <listheader align="center"  label="Actualizar" width="10%"/>
+             <listheader align="center" label="Remover" width="10%"/>
+        </listhead>
+            <listitem value="${each}" forEach="${bl_servico$gerirPromocaoController.promocoes}">
+            <listcell label="${each.id_Promocao}" />  
+            <listcell label="${each.descricao}" />    
+            <listcell label="${each.categoria.designacao}"  /> 
+            <listcell label="${each.categoria.preco }"     />
+            <listcell label="${each.quantidadeMinimaQuartos}" />
+             <listcell label="${each.reducaoPercentual}" /> 
+            <listcell label="${each.data_inicial}"/>
+            <listcell label="${each.data_final}"/>
+            <listcell >
+                 <button   forward="onClick$celula_a" image="/widgets/Imagens/actualizar.png" />
+            </listcell>
+            <listcell>
+                 <button  forward="onClick$celula_r" image="/widgets/Imagens/remove.png" />
+            </listcell>
+           
+        </listitem>
+    </listbox>
+         </div>
+           <div align="right"> 
+           <separator/>      
+          </div>   
+          </div>
+       
+    
+     <window id="win_addService" border="normal" width="50%" height="400px" mode="highlighted" visible="false"  apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.gerirPromocaoController">
+          <borderlayout>
+    
+   <center border="0">
+    <div align="center">
+    <div align="center">
+     <label style="font-size:50;font-weight:bold" value="ADICIONAR PROMOÇÃO"/>
+     <separator/>
+     
+     </div>
+   
+     <separator/>
+     <separator/>
+     
+     <label  width="30" value="Descrição:"></label> 
+     <space/>
+     <textbox id="txt_descricao" width="50%" constraint="no empty" multiline="true" rows="4"/>
+     <separator/> 
+     <separator/>   
+     <label>Categoria de quarto:</label> <space/><space/> 
+					<combobox id="cbx_categoria" constraint="no empty"  width="30"  >
+						<comboitem label="${each.designacao}" value="${each}" forEach="${win_addService$gerirPromocaoController.categorias}"/>
+					</combobox>
+        <separator/>
+       <separator/>
+       
+       <label>Quantidade mínima de quartos:</label> <space/><space/> 
+               <spinner id="sp_quant" width="20%" ></spinner>
+      <separator/>
+       <separator/>
+       
+      <label>Desconto:</label> <space/><space/> 
+               <spinner id="sp_desconto" width="20%"></spinner> <space/> <label value="%"></label>
+           <separator/>
+       <separator/>    
+        <label>Data inicial:</label> <space/><space/> 
+        <datebox id="dbx_datain" ></datebox>
+     
+          
+      <separator/>
+       <separator/>
+        <label>Data final:</label> <space/><space/> 
+        <datebox id="dbx_dataout" > </datebox>
+        <separator/>
+       <separator/>
+       <separator/>
+     
+           <button id="btn_cancelar" label="Cancelar"/>  <space/><space/>
+          <button id="btn_addPromo" label="Adicionar"/>
+          
+   
+     </div>
+    
+    </center>
+</borderlayout>
+     </window>    
+     
+    
+    
+</zk> 

@@ -1,0 +1,44 @@
+<zk>
+        <div id="dv_verComentario" width ="90%" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.SubmeterComentarioController"  >
+		    <div>
+		         <div align="center">
+		        <label value="Comentarios submetidos" style=" font-size:20pt;font-weight:bold" /> <space/><space/>
+		        </div>
+		        
+		         <separator bar="true" />
+		    </div>
+		    <separator/>
+		    
+		    <div align="left">
+		                
+		    </div>
+		   <separator/>
+		   <separator/>
+		    <div>
+		    <listbox id="lista_sugestacao" rows="8" >
+		        
+		        <listhead >
+		            <listheader align="center"  label="Hospede" width="15%" />
+		            <listheader align="center"  label="Area de Avaliação" width="15%"/>
+		            <listheader align="center"  label="Avaliação" width="15%"/>		            
+		            <listheader align="center"  label="Data da submissão" width="15%"/>
+		            <listheader align="center"  label="Comentario" width="15%"/>
+                    <listheader align="center"  label="Remover" width="10%"/>
+		        </listhead>
+		            <listitem value="${each}" forEach="${dv_verComentario$SubmeterComentarioController.comentarios}">
+		            <listcell label="${each.hospede.ocupante.nome}" />            
+		            <listcell label="${each.area_sugestao}" />
+		            <listcell label="${each.classificacao}" />
+		            <listcell label="${each.data_da_submissao}" />	
+		            <listcell label="${each.comentario}" />
+                    <listcell>
+                       <button  forward="onClick$celula_r" image="/widgets/Imagens/remove.png" />
+                    </listcell>		           
+		        </listitem>
+		    </listbox>
+		         </div>
+		           <div align="right"> 
+		           <separator/>      
+		          </div>   
+		          </div>
+</zk>

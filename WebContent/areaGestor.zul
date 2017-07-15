@@ -1,0 +1,109 @@
+<zk>
+      <style src="/widgets/layout/style.css" />
+      <zscript>
+        import org.zkoss.zk.ui.Executions;
+        import java.lang.String;
+        import org.zkoss.zk.ui.util.Clients;
+        import mz.PestanaRovuma.Hotel_and_Resorts.Dao.SubpaginasDao;
+        import java.util.List;
+        import mz.PestanaRovuma.Hotel_and_Resorts.model.Subpaginas;
+        
+          boolean ini = true;
+          boolean promo= false;
+          boolean serv = false;
+          boolean quarto= false;
+          boolean category = false;   
+          
+          boolean i = false;
+            List li = new SubpaginasDao().findAll();
+         
+			    Subpaginas sub = new Subpaginas();
+			    sub = li.get(0);
+      
+        if (sub.getAreaGestor().equalsIgnoreCase("s") || sub.getAreaGestor().equalsIgnoreCase("sr") ) { 
+             serv = true;
+             ini =false;
+             promo = false;
+             quarto= false;
+             category = false;
+             if (sub.getAreaGestor().equalsIgnoreCase("s"))
+              Clients.showNotification("Serviço Actualizado com sucesso!");
+             else if (sub.getAreaGestor().equalsIgnoreCase("sr"))
+                 Clients.showNotification("Serviço Removido com sucesso!");
+        }else if (sub.getAreaGestor().equalsIgnoreCase("p") || sub.getAreaGestor().equalsIgnoreCase("pr") ) {
+             serv = false;
+             ini =false;
+             promo = true;
+             quarto= false;
+             category = false;
+             if (sub.getAreaGestor().equalsIgnoreCase("p"))
+            Clients.showNotification("Promoção Actualizada com sucesso!");
+            else if (sub.getAreaGestor().equalsIgnoreCase("pr"))
+              Clients.showNotification("Promoção Removida com sucesso!");
+         } else if (sub.getAreaGestor().equalsIgnoreCase("q") || sub.getAreaGestor().equalsIgnoreCase("qr")) {
+             serv = false;
+             ini =false;
+             promo = false;
+             quarto= true;
+             category = false;
+             if (sub.getAreaGestor().equalsIgnoreCase("q"))
+            Clients.showNotification("Quarto Actualizado com sucesso!");
+            else if (sub.getAreaGestor().equalsIgnoreCase("qr"))
+            Clients.showNotification("Quarto Removido com sucesso!");
+         } else if (sub.getAreaGestor().equalsIgnoreCase("c") || sub.getAreaGestor().equalsIgnoreCase("cr")) {
+             serv = false;
+             ini =false;
+             promo = false;
+             quarto= false;
+             category = true;
+             if (sub.getAreaGestor().equalsIgnoreCase("c"))
+            Clients.showNotification("Categoria Actualizada com sucesso!");
+            if(sub.getAreaGestor().equalsIgnoreCase("cr"))
+             Clients.showNotification("Categoria Removida  com sucesso!");
+         }  
+          
+         sub.setAreaGestor("zz");
+         sub.setAreaHospede("zz");
+         sub.setAreaRecepcionista("zz");
+         new SubpaginasDao().update(sub);
+         
+       </zscript> 
+   
+        <borderlayout sclass="complex-layout" height="1000px">
+        
+            <north  border="0">
+            <div>
+              <include src="/header.zul"  />
+            </div>
+            </north>
+            
+              <east width="200px" flex="true" splittable="true" margins="25,0,0,0" >
+		              <include src="/barnerLogout.zul" />
+                     </east>
+                     
+                     <west  width ="150px" border="0" flex="true">
+		                 <include src="/menuGestor.zul"/>
+                       </west>
+            
+              <center>
+               
+                              <div align="center">   
+                                 <include id="inc_corpo" visible="${ini}"  src="/corpoGestor.zul" />  
+                                 <include id="inc_publicaArtigo" visible="false" src=""/>                  
+                                 <include id="inc_gerirServico" visible="${serv}" src="/gerirServico.zul" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.gerirServicoController"/>
+                                 <include id="inc_gerirPromocao" visible="${promo}" src="/gerirPromocao.zul" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.gerirPromocaoController"/>
+                                 <include id="inc_gerircategoria" visible="${category}"  src="/gerirCategoriaQuartos.zul" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.GerirCategoriaController"/> 
+                                 <include id="inc_gerirQuarto" visible="${quarto}" src="gerir_quarto.zul" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.GerirQuartoController"/>		                     
+		                         <include id="inc_estatistica" visible="false" src=""/>
+		                         <include id="inc_lstcomentario" visible="false" src="/comentarioSubmetido.zul" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.SubmeterComentarioController"/>  
+                              </div>             
+                       
+             </center>
+             <south>
+                <div>
+                    <include src="/footer.zul"/>
+                </div>
+             </south>
+           </borderlayout>
+
+</zk>

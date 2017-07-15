@@ -1,0 +1,18 @@
+<zk>
+      
+     <style src="/widgets/layout/style.css"/>
+    
+      <div sclass="footer" height="50px" align="center">
+          <vbox align="center" sclass="footer-box">
+          <toolbar mold="panel" align="center">
+                    <toolbarbutton label="Facebook" />
+                    <toolbarbutton label="Twitter" />
+                    <toolbarbutton label="Whatsapp" />
+                    <toolbarbutton label="Print" />
+                    <separator orient="vertical" bar="true" />
+                    Powered by Grupo
+                </toolbar>
+               
+          </vbox>
+       </div>
+</zk>

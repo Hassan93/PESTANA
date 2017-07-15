@@ -1,0 +1,43 @@
+<zk>
+      <style src="/widgets/layout/style.css" />
+        
+   
+        <borderlayout sclass="complex-layout" >
+        
+            <north  border="0">
+            <div>
+              <include src="/header.zul"  />
+            </div>
+            </north>
+            
+              <center border="0">
+                <borderlayout sclass="inner-border">
+	              
+		           
+		           <east width="200px" flex="true" splittable="true" margins="25,0,0,0" border="0">
+		              <include src="/barnerDireito.zul" />
+                     </east>
+                     
+                     <west border="0" flex="true">
+		                 <include src="/banerEsquerda.zul"/>
+                       </west>
+                       
+                         <center border="0" >
+                              <div align="center">                       
+                                <include src="/corpoPrincipal.zul"/>
+                                   
+                                  
+                              </div>             
+                         </center>
+                       
+                 </borderlayout>
+             </center>
+             
+             <south border="0">
+                <div>
+                    <include src="/footer.zul"/>
+                </div>
+             </south>
+           </borderlayout>
+
+</zk>

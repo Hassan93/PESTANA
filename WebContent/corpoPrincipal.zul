@@ -1,0 +1,12 @@
+<zk>
+   
+     <vlayout spacing="10">
+           <label value="Pagina Inicial" style="font-size:36px;" /> 
+          <!--   <image sclass="complex-layout-header-img"   src="Hotel Pestana.jpg"/> -->
+          <flash loop="true" autoplay="true" src="Presentation1.swf"
+		height="450" width="800">
+	</flash>
+		   
+     </vlayout>   
+    
+</zk>

@@ -1,0 +1,28 @@
+<zk>
+  <div>
+      <menubar id ="mb_tarefas" width="50%" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.MenuPrincipalController">
+						<menuitem id ="mnit_pagInical" label = "Pagina Inicial"/>
+						<menu label="Reserva">
+						    <menupopup>
+								<menuitem id="mnit_eftReserva" label="Efectuar"/>
+								<menuitem id="mnit_actReserva" label="Actualizar"/>
+								<menuitem id="mnit_cancReserva" label="Cancelar"/>
+					        </menupopup>
+						</menu>
+					    <menuitem id="mnit_quarto" label="Ver Quartos"/>
+						 <menu label="Serviços de quartos">
+						    <menupopup>
+								<menuitem id="mnit_verServicos" label="Ver Servicos"/>
+								<menuitem id="mnit_solicitarServicos" label="Solicitar Servicos"/>								
+					        </menupopup>
+					   </menu>
+						<menu label="Sobre nós">
+						    <menupopup>
+								<menuitem id="mnit_Comentario" label="Submeter Comentario"/>
+								<menuitem id="mnit_ajuda" label="Ajuda"/>								
+					        </menupopup>
+					   </menu>
+	 </menubar>
+  </div>
+
+</zk>

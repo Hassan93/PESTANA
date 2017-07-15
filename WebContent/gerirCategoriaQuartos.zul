@@ -1,0 +1,105 @@
+<zk>
+    
+    <div id="bl_categoria" width ="90%" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.GerirCategoriaController"  >
+    <div>
+         <div align="center">
+        <label value="Categoria de Quartos" style=" font-size:25pt;font-weight:bold" /> <space/><space/>
+        </div>
+        
+         <separator bar="true" />
+    </div>
+    <separator/>
+    
+    <div align="right">
+          
+           <button  id="btn_add" label="Adicionar Categoria" image="/widgets/Imagens/add.png"  />
+       
+    </div>
+   <separator/>
+   <separator/>
+    <div>
+    <listbox id="lista_categoria" rows="13" >
+        
+        <listhead >
+            <listheader align="center"  label="Id Categoria" width="15%" />
+            <listheader align="center"  label="Designação" width="15%"/>
+            <listheader align="center"  label="Preco (MZN)" width="15%" />          
+            <listheader align="center" label="Descricao" width="10%"/>
+            <listheader align="center"  label="Actualizar" width="10%"/>
+            <listheader align="center" label="Remover" width="10%"/>
+        </listhead>
+            <listitem value="${each}" forEach="${bl_categoria$GerirCategoriaController.categorias}">
+            <listcell label="${each.getId_Categoria()}"  /> 
+            <listcell label="${each.getDesignacao()}" />  
+            <listcell label="${each.getPreco()}" />  
+            <listcell label="${each.getDescricao() }"     />
+            <listcell >
+                 <button   forward="onClick$celula_a" image="/widgets/Imagens/actualizar.png" />
+            </listcell>
+            <listcell>
+                 <button  forward="onClick$celula_r" image="/widgets/Imagens/remove.png" />
+            </listcell>
+           
+        </listitem>
+    </listbox>
+         </div>
+           <div align="right"> 
+           <separator/>      
+          </div>   
+          </div>
+       
+    
+     <window border="0" mode="highlighted" width="50%" height="70%" id="win_reg_categoria" visible="false" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.GerirCategoriaController"  >
+                    
+         		<borderlayout id="bdr_reg_categoria">
+         		 <north border="0">
+		            <div align="center">  
+		             <div align="center">
+                        <label value="Adicionar Categoria" style=" font-size:25pt;font-weight:bold" /> <space/><space/>
+                    </div>
+		              <space height="10px"/>
+		             </div> 
+		          </north>
+		          
+		          <center border="0">  
+		             <div vflex="1" align="center">
+		                  <div vflex="1">
+			                 <separator/>
+			                 <label value="Designacao" style="font-size:15px;" />
+			                 <space/> <space/>
+			                 <textbox sclass="fn-type" id="txt_design" width="60%" constraint="no empty"  />
+			              </div>
+			               
+			              <div vflex="1" align="center">
+			                <separator/>
+			                 <label value="Preço" style="font-size:15px;" />
+			                <space/> <space/>
+			                 <textbox id="txt_preco" sclass="fn-type" width="60%" constraint="no empty"/>
+			              </div>
+						                   
+			              <div vflex="1" align="center">
+			                  <separator/>
+				              <label value="Descrição" style="font-size:15px;" />
+				              <space/> <space/>
+				              <textbox id="txt_desc" width="60%" constraint="no empty" multiline="true" rows="4"/>
+					      </div>
+					      			      
+					    <separator/><separator/>		      
+					      <div vflex="1" align="center">
+					        <hlayout>
+			                  
+			                  <button id="btn_cancel" label="Cancelar"/> 
+				              <button id="btn_add_cat" label="Adicionar"/> 
+				              </hlayout>
+					      </div>
+		                 
+		               </div> 
+		                
+				  </center>          		
+         		</borderlayout>               
+            
+        </window>  
+     
+    
+    
+</zk> 

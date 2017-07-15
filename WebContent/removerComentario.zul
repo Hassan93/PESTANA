@@ -1,0 +1,35 @@
+<?page title="Auto Generated index.zul"?>
+<zk>
+
+<zscript>
+   import mz.PestanaRovuma.Hotel_and_Resorts.model.Comentario;    
+   Comentario comentario = (Comentario)Executions.getCurrent().getArg().get("serv");
+</zscript>
+
+ <window id="wd_comentario" mode="highlighted" width="25%" height="100px" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.RemoverComentarioController" closable="true">
+  <borderlayout>
+   <north>
+     <div>
+     <combobox visible="false">
+       <comboitem id="cbit_comentario" value="${comentario}" ></comboitem>
+     </combobox>
+        <label style="font-size:20px;font-weight:bold;" value="Confirmar actualização" />
+     </div>
+   </north>
+   <center border="0">
+     <div align="center">
+      <separator/>
+      <separator />
+        <label style="font-size:14px" value="Deseja realmente remover este comentario?"/>
+     </div>
+   </center>
+   <south border="0">
+     <div align="center" >
+        <button id="btn_nao" label="Não" /> <space/><space/>
+        <button id="btn_sim" label="Sim" />
+     </div>
+   </south>
+  </borderlayout>
+</window> 
+
+</zk>

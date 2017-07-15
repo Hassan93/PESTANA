@@ -1,0 +1,14 @@
+<zk>
+    <style src="/widgets/layout/style.css"/>
+     <div sclass="banerDireito" align="center">
+       
+       	       <div>
+	       <vlayout >
+	           <image sclass="icon-login" src="/widgets/Imagens/Welcome.jpg"/>
+		        <label value="Bem vindo" style="font-size:36px;" />
+	       </vlayout>
+	       </div>
+	     
+	  </div>  
+
+</zk>

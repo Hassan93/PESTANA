@@ -1,0 +1,64 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<zscript>
+  import mz.PestanaRovuma.Hotel_and_Resorts.model.Categoria;
+    
+    Categoria categoria = (Categoria)Executions.getCurrent().getArg().get("1");
+   
+</zscript>
+      <window border="0" mode="highlighted" width="50%" height="70%" id="win_act_categoria" apply="mz.PestanaRovuma.Hotel_and_Resorts.controller.ActualizarCategoriaController"  >
+               
+                 <combobox visible="false">
+                     <comboitem id="combo" value="${categoria}"></comboitem>
+                 </combobox> 
+                     
+         		<borderlayout id="bdr_reg_categoria">
+         		 <north border="0">
+		            <div align="center">  
+		              <div>
+		               <space/> <space/>
+		             	 <label value="Registar Categoria de Quartos" style="font-size:20px;" />
+		              </div>
+		              <space height="10px"/>
+		             </div> 
+		          </north>
+		          
+		          <center border="0">  
+		             <div align="center">
+		                  <div>
+			                 <separator/>
+			                 <label value="Designacao" style="font-size:15px;" />
+			                 <space/> <space/>
+			                 <textbox sclass="fn-type" value="${categoria.designacao}" id="txt_design" width="60%" constraint="no empty"  />
+			              </div>
+			               
+			              <div>
+			                <separator/>
+			                 <label value="Preço" style="font-size:15px;" />
+			                <space/> <space/>
+			                 <textbox id="txt_preco" value="${categoria.preco}" sclass="fn-type" width="60%" constraint="no empty"/>
+			              </div>
+			              
+			              <div>
+			                  <separator/>
+				              <label value="Descrição" style="font-size:15px;" />
+				              <space/> <space/>
+				              <textbox id="txt_desc" value="${categoria.descricao}" width="60%" constraint="no empty" multiline="true" rows="4"/>
+					      </div>
+					   
+					      <div>
+			                  <separator/><separator/>
+			                  <button id="btn_cancel" label="Cancelar"/> 
+				              <button id="btn_add_cat" label="Actualizar"/> 
+					      </div>
+		                 
+		               </div> 
+		                
+				  </center>          		
+         		</borderlayout>               
+            
+        </window>  
+      
+     
+</zk>
